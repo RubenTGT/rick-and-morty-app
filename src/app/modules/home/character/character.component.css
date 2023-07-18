@@ -10,7 +10,7 @@
 }
 
 .card {
-    max-width: 300px; 
+    max-width: 250px; 
     margin-bottom: 1rem;
     border: 1px solid #ccc;
     transition: box-shadow 0.3s, filter 0.3s;

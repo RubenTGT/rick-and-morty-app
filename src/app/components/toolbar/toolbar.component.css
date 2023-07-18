@@ -1,3 +1,10 @@
-.example-spacer {
-    flex: 1 1 auto;
-  }
+.mat-toolbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5rem;
+}
+
+.logo{
+  max-width: 60%;
+}
