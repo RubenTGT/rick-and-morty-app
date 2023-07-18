@@ -10,7 +10,7 @@ import { Character } from './character.model';
 })
 
 export class CharacterComponent {
-
+  collapsed: boolean = true;
   characters: Character[] = [];
   id!: string
 
@@ -28,6 +28,7 @@ export class CharacterComponent {
         console.log(this.characters) })
     })
   }
+
 }
 
 

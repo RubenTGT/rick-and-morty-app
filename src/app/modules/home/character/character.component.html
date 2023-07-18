@@ -1,8 +1,17 @@
-<div>
-    <h2>Data api demo</h2>
-    <ul>
-        <li *ngFor="let item of characters">
-            {{item.name}}
-        </li>
-    </ul>
-</div>
+<mat-card class="example-card" *ngFor="let character of characters">
+    <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title> {{character.name}} </mat-card-title>
+        <mat-card-subtitle> {{character.status}} </mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="{{character.image}}" alt="Character image">
+    <mat-card-content *ngIf="!collapsed">
+        <p>material design card <code class="docs-markdown-code">&lt;mat-card&gt;</code></p>
+        <p><a href="https://material.angular.io/components/card/examples">Material design card </a></p>
+        <p>Lorem Ipsum is simply dummy the 1500s</p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button (click)="collapsed=false" color="accent">Show Details</button>
+        <button mat-raised-button (click)="collapsed=true"  color="primary">Hide Details</button>
+    </mat-card-actions>
+</mat-card>
