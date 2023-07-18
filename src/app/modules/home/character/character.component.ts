@@ -10,7 +10,6 @@ import { Character } from './character.model';
 })
 
 export class CharacterComponent {
-  collapsed: boolean = true;
   characters: Character[] = [];
   id!: string
 
@@ -21,12 +20,15 @@ export class CharacterComponent {
 
   ngOnInit (): void {
     this.route.params.subscribe(params => {
-      this.id = String(params['id']) 
-      this.service.getCharacters(this.id).subscribe( (res: any) => {
-        const {info, results} = res;
-        this.characters = [...this.characters, ...results]
-        console.log(this.characters) })
-    })
+      this.id = String(params['id']);
+      this.service.getCharacters(this.id).subscribe((res: any) => {
+        const { info, results } = res;
+        this.characters = results.map((character: Character) => {
+          return { ...character, collapsed: true }; // Agregar la propiedad collapsed con valor inicial true
+        });
+        console.log(this.characters);
+      });
+    });
   }
 
 }

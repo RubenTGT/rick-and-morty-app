@@ -1,28 +1,26 @@
-<mat-card class="example-card" *ngFor="let character of characters">
-
-    <mat-card-header>
-        <mat-card-title> {{character.name}} </mat-card-title>
-    </mat-card-header>
-
-    <img mat-card-image src="{{character.image}}" alt="Character image">
-
-    <mat-card-content>
-        <p>
-            Species: {{character.species}} <br>
-            Status: {{character.status}} <br>
-        </p>
-    </mat-card-content>
-
-    <mat-card-content *ngIf="!collapsed">
-        <p>
-            Gender: {{character.gender}} <br>
-            Origin: {{character.origin.name}}
-        </p>
-    </mat-card-content>
-
-    <mat-card-actions>
-        <button mat-raised-button (click)="collapsed=false" color="accent">Show Details</button>
-        <button mat-raised-button (click)="collapsed=true"  color="primary">Hide Details</button>
-    </mat-card-actions>
-
-</mat-card>
+<main class="container">
+    <div class="cards-list">
+        <mat-card class="example-card" *ngFor="let character of characters">
+            <mat-card-header>
+                <mat-card-title class="tittle"> {{character.name}} </mat-card-title>
+            </mat-card-header>
+            <img mat-card-image src="{{character.image}}" alt="Character image">
+            <mat-card-content>
+                <p>
+                    Species: {{character.species}} <br>
+                    Status: {{character.status}} <br>
+                </p>
+            </mat-card-content>
+            <mat-card-content *ngIf="!character.collapsed">
+                <p>
+                    Gender: {{character.gender}} <br>
+                    Origin: {{character.origin.name}}
+                </p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-raised-button (click)="character.collapsed = false" color="accent">Show Details</button>
+                <button mat-raised-button (click)="character.collapsed = true"  color="primary">Hide Details</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</main>
