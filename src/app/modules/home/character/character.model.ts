@@ -5,5 +5,9 @@ export interface Character {
     species: string;
     gender: string;
     created: string;
-    status: string;
+    status: string
+    origin: {
+      name: string
+      url: string
+    }
   }
