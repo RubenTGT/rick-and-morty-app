@@ -23,4 +23,10 @@
             </mat-card-actions>
         </mat-card>
     </div>
+
+    <div class="pagination">
+        <button class="pagination-btn" (click)="previousPage()" [disabled]="currentPage === 1">Previous</button>
+        <span class="pagination-info">Page {{ currentPage }} of {{ totalPages }}</span>
+        <button class="pagination-btn" (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
+    </div>
 </main>

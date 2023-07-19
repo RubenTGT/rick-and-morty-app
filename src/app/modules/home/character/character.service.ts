@@ -12,10 +12,9 @@ export class CharacterService {
 
   constructor (private readonly httpClient: HttpClient) {}
 
-  public getCharacters (page: string): Observable<any[]> {
-    return this.httpClient.get<Character[]>(
-      this.CHARACTER_PAGE_API + page
-    )
+  public getCharacters(page: number, pageSize: number): Observable<any[]> {
+    const url = `${this.CHARACTER_PAGE_API}${page}&pageSize=${pageSize}`;
+    return this.httpClient.get<Character[]>(url);
   }
 
 }
