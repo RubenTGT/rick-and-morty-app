@@ -11,6 +11,7 @@
 
 .card {
     max-width: 250px; 
+    height: 500px;
     margin-bottom: 1rem;
     border: 1px solid #ccc;
     transition: box-shadow 0.3s, filter 0.3s;
@@ -36,7 +37,7 @@ mat-card-actions {
 .card:hover {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
     filter: brightness(90%);
-  }
+}
 
 .paginator {
     display: flex;
@@ -61,5 +62,6 @@ mat-card-actions {
 }
   
 .pagination-info {
+    color: #fff;
     margin: 0 1rem;
 }
