@@ -1,0 +1,33 @@
+<main class="container">
+    <div class="cards-list">
+        <mat-card class="card" *ngFor="let character of characters">
+            <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title class="tittle"> {{character.name}} </mat-card-title>
+            </mat-card-header>
+            <img mat-card-image src="{{character.image}}" alt="Character image" class="card-image">
+            <mat-card-content>
+                <p>
+                    Species: {{character.species}} <br>
+                    Status: {{character.status}} <br>
+                </p>
+            </mat-card-content>
+            <mat-card-content *ngIf="!character.collapsed">
+                <p>
+                    Gender: {{character.gender}} <br>
+                    Origin: {{character.origin.name}}
+                </p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-raised-button (click)="character.collapsed = false" color="primary">Show Details</button>
+                <button mat-raised-button (click)="character.collapsed = true"  color="accent">Hide Details</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+
+    <div class="paginator">
+        <button class="pagination-btn" (click)="previousPage()" [disabled]="currentPage === 1">Previous</button>
+        <span class="pagination-info">Page {{ currentPage }} of {{ totalPages }}</span>
+        <button class="pagination-btn" (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
+    </div>
+</main>
